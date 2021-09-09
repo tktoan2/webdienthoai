@@ -1,23 +1,13 @@
-# ictshop_aspnet
+# Asp app + mysql 2019
 
-1. Giải nén
+1. Clone về
 
-2. Kết nối cơ sở dữ liệu
-- Mở thư mục database Copy 2 file vào thư mục data của SQL SERVER
-PATH: C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA
-- Mở sql server attach db 
-- Xong
+2. Chạy nhảy vào trong thư mục vừa mới tải về.
 
-3. Mở project với Visual Studio
-file ictshop.sln
-- Vào file Web.config
+3. docker build -t imdbserver . 
+  Sau bước này sẽ tạo ra 2 image là imdbserver và 1 image ko có tên chỉ có ID
 
-4. Config lại kết nối từ Visual Studio đến SQL Server
-- Tại thẻ <connectionStrings> </connectionStrings>
-thay đổi tên server , tài khoản , mật khẩu kết nối đến sql server
-data source là server name
-
-Lưu lại. build lại ứng dụng . Và run
+4. docker run -it 
 
 Đăng nhập :
 - Tài khoản khách hàng: 
