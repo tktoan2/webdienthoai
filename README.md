@@ -2,12 +2,20 @@
 
 1. Clone về
 
-2. Chạy nhảy vào trong thư mục vừa mới tải về.
+2. Nhảy vào trong thư mục vừa mới tải về.
 
 3. docker build -t imdbserver . 
-  Sau bước này sẽ tạo ra 2 image là imdbserver và 1 image ko có tên chỉ có ID
+  Sau bước này sẽ tạo ra 2 image là imdbserver và 1 image ko có tên chỉ có ID (gọi là image2)
 
-4. docker run -it 
+4. docker run -it -d -p 1433:1433 --name dbserver imdbserver
+  Khởi tạo db container với container name là dbserver
+5.docker run -it -d -p 9000:9000 --name webapp <image2>
+  Khởi tạo webapp với container name webapp
+6. docker create network Mynet1
+7. docker network connect Mynet1 webapp
+8. docker network connect Mynet1 dbserver
+  Bước 6,7,8 là khởi tạo network và join các container vào chung 1 netnwork để app có thể gọi db bằng tên container thay cho IP (vì IP của DBserver thay đổi mỗi lần tạo khác nhau)
+9. vào <ip host app>:9000 để vô web app
 
 Đăng nhập :
 - Tài khoản khách hàng: 
