@@ -1,4 +1,4 @@
-FROM mono:latest as asp
+FROM mono:latest as webapp
 RUN apt-get update && apt-get install libgpm2 libncurses6 libprocps7 mono-xsp4 mono-xsp4-base procps psmisc
 WORKDIR /myapp
 COPY ./Ictshop /myapp
@@ -16,5 +16,5 @@ COPY ./Database/database/QLdienthoai_log.ldf /posdb/
 RUN chmod +x /posdb/attach_db.sh
 RUN (/opt/mssql/bin/sqlservr --accept-eula & ) | grep -q "Service Broker manager has started"
 ENTRYPOINT /posdb/attach_db.sh & /opt/mssql/bin/sqlservr
-#ENTRYPOINT ["/bin/sh", "-c", "/posdb/attach_db.sh"]
+
  
