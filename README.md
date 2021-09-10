@@ -2,7 +2,7 @@
 
 1. git clone https://github.com/tktoan2/webdienthoai.git
 
-2. Nhảy vào trong thư mục vừa mới tải về.
+2. cd webdienthoai/
 
 3. chmod +x install.sh
 4. ./install.sh
