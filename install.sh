@@ -19,5 +19,5 @@ docker network connect Mynet1 webapp
 docker network connect Mynet1 dbserver
 sleep 15s
 ip="$(ifconfig | grep -A 1 'eth0' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
-echo "Deployment succesfull, please wait about 30s then access http://$ip:9001"
+echo "Deployment successful, please wait about 30s to initialize the database server then access http://$ip:9001"
 
